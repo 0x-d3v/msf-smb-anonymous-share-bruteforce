@@ -129,7 +129,7 @@ For quick testing without Metasploit:
 
 ```bash
 while read share; do
-  smbclient -N //<target_ip>/$share -c 'ls' 2>&1 && echo "[+] Found Accessible Share: $share"
+  smbclient -N //<target_ip>/$share -c 'ls' /dev/null 2&>1 && echo "[+] Found Accessible Share: $share"
 done < shares.txt
 ```
 
