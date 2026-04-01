@@ -44,7 +44,7 @@ class MetasploitModule < Msf::Auxiliary
       share_name = share.strip
       next if share_name.empty?
 
-      cmd = "smbclient -N //#{ip}/#{share_name} -c 'ls' 2>&1"
+      cmd = "smbclient -N //#{ip}/#{share_name} -c 'ls'"
       output = `#{cmd}`
 
       if $?.success? && !output.include?("NT_STATUS")
